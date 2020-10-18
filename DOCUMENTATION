@@ -1,0 +1,48 @@
+									Marsh documentation
+									   2020 eklips
+
+The purpose of this interpreter is to accompany a simple and original Turing-complete instruction set and 
+compiled bytecode from a syntactically assembly style language
+
+[instructions]
+0xA0 - ADD (Result stored in X)
+0xA1FF - JMP
+0xB0 - SUB (Result stored in X; can be used to find greater or less than)
+0xC0FF - MOV X, FF
+0xD0FF - MOV Y, FF
+0xB1FF - MOV S, FF
+0x40 - DUMP SYSTEM INFO
+0xF0 - HALT SYSTEM
+0xFA - EXIT ALL
+0x500F - PUSH F
+0x600F - POP F
+0xE0 - SYSCALL
+0xEC - CMP X, Y
+
+Instructions without operands are 8 bits long, while instructions
+with operands are 16 bits long. Registers are 8 bits wide.
+If 4 or more invalid instructions (or more specifically, opcodes) are encountered, the interpreter will force exit.
+
+[memory map]
+0-7000 program ROM
+7001-7050 additional shit
+7051-9000 stack
+
+[8-bit registers]
+X and Y - general purpose registers which hold values up to 256.
+S - syscall interrupt register
+
+[Flags]
+CF (comparison flag) - where the result of a comparison between X and Y is stored. (0 is equal, 1 is not equal)
+
+[statuses]
+a - machine is running
+b - machine is halted
+
+[syscalls]
+The primary interrupt is set in the S register. 4 and 5 read data from the X register.
+4 - print ASCII character
+5 - print integer
+6 - read a character and push it onto the stack
+C - read a character and store it in X
+D - read a character and store it in Y
