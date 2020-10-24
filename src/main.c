@@ -58,7 +58,7 @@ int main(int argc, char* argv[]) {
 	}
 	else {
 	       if ((strcmp(argv[1], "-version") == 0) || (strcmp(argv[1], "--version") == 0)) {
-		  printf("Marsh 8-bit interpreter\ncompiled on %s at %s\nversion 1.3\n2020 eklips\n", __DATE__, __TIME__);
+		  printf("Marsh 8-bit interpreter\ncompiled on %s at %s\nversion 1.3\n2020 moxniso\n", __DATE__, __TIME__);
 	          return 0;
 	        }
 
