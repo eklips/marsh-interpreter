@@ -20,7 +20,8 @@ compiled bytecode from a syntactically assembly style language
 0xEC - CMP X, Y
 
 [additional asm specific keywords]
-LAB - label keyword
+LAB - label declaration keyword
+~ - newline character
 
 Instructions without operands are 8 bits long, while instructions
 with operands are 16 bits long. Registers are 8 bits wide.
