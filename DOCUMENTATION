@@ -19,6 +19,9 @@ compiled bytecode from a syntactically assembly style language
 0xE0 - SYSCALL
 0xEC - CMP X, Y
 
+[additional asm specific keywords]
+LAB - label keyword
+
 Instructions without operands are 8 bits long, while instructions
 with operands are 16 bits long. Registers are 8 bits wide.
 If 4 or more invalid instructions (or more specifically, opcodes) are encountered, the interpreter will force exit.
