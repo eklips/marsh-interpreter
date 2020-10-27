@@ -5,6 +5,8 @@ A bytecode interpreter for the Marsh 8-bit instruction set.
 Marsh is a simple 8-bit instruction set inspired by the MOS 6502 and CHIP-8. The programs are written in Marsh assembly and then
 assembled to create a ROM, which is then run via this interpreter/VM. 
 
+https://github.com/moxniso/marsh-assembler
+
 # What platform is this for?
 Anything that compiles C. The only thing Marsh really uses is stdio.h and stdlib.h
 
