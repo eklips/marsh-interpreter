@@ -1,10 +1,13 @@
-									Marsh documentation
-									   2020 moxniso
+                                                                        Marsh documentation
+                                                                      November 9 2020 Revision
+                                                                           2020-2021 moxniso
+
 
 The purpose of this interpreter is to accompany a simple and original Turing-complete instruction set and 
 compiled bytecode from a syntactically assembly style language
 
 [instructions]
+0x01 - NOP
 0xA0 - ADD (Result stored in X)
 0xA1FF - JMP
 0xB0 - SUB (Result stored in X; can be used to find greater or less than)
@@ -19,10 +22,6 @@ compiled bytecode from a syntactically assembly style language
 0xE0 - SYSCALL
 0xEC - CMP X, Y
 
-[additional asm specific keywords]
-LAB - label declaration keyword
-~ - newline character
-
 Instructions without operands are 8 bits long, while instructions
 with operands are 16 bits long. Registers are 8 bits wide.
 If 4 or more invalid instructions (or more specifically, opcodes) are encountered, the interpreter will force exit.
@@ -33,11 +32,11 @@ If 4 or more invalid instructions (or more specifically, opcodes) are encountere
 7051-9000 stack
 
 [8-bit registers]
-X and Y - general purpose registers which hold values up to 256.
+X and Y - general purpose registers
 S - syscall interrupt register
 
 [Flags]
-CF (comparison flag) - where the result of a comparison between X and Y is stored. (0 is equal, 1 is not equal)
+CF (comparison flag) - where the result of a comparison between X and Y is stored. (1 is equal, 0 is not equal)
 
 [statuses]
 a - machine is running
