@@ -20,6 +20,9 @@ int execute(machine* vm, char error_counter) {
 	debug_printf("Executing %x at %d...\nErrors: %d\n", vm->memory[vm->pc], vm->pc, error_counter);
 	
 	switch(opcode_to_decode & 0xFF00) {
+		case(0x0100): // NOP
+			vm->pc++;
+			break;
 		case(0xA000): // ADD
 			vm->x += vm->y;
 			vm->y = 0;
